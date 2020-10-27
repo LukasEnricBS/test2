@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="casinoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Deck">
+    <Key>
+      <PropertyRef Name="tableId" />
+      <PropertyRef Name="cardNum" />
+      <PropertyRef Name="cardSuit" />
+    </Key>
+    <Property Name="tableId" Type="Int32" Nullable="false" />
+    <Property Name="cardNum" Type="Int32" Nullable="false" />
+    <Property Name="cardSuit" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="playerName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="played" Type="Boolean" />
+    <NavigationProperty Name="GameCard" Relationship="Self.FK__Deck__440B1D61" FromRole="Deck" ToRole="GameCard" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__Deck__playerName__44FF419A" FromRole="Deck" ToRole="Player" />
+    <NavigationProperty Name="GameTable" Relationship="Self.FK__Deck__tableId__4316F928" FromRole="Deck" ToRole="GameTable" />
+  </EntityType>
+  <EntityType Name="GameCard">
+    <Key>
+      <PropertyRef Name="num" />
+      <PropertyRef Name="suit" />
+    </Key>
+    <Property Name="num" Type="Int32" Nullable="false" />
+    <Property Name="suit" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Decks" Relationship="Self.FK__Deck__440B1D61" FromRole="GameCard" ToRole="Deck" />
+  </EntityType>
+  <EntityType Name="GameTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="maxPlayers" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pwd" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Decks" Relationship="Self.FK__Deck__tableId__4316F928" FromRole="GameTable" ToRole="Deck" />
+    <NavigationProperty Name="PlayerTables" Relationship="Self.FK__PlayerTab__table__3D5E1FD2" FromRole="GameTable" ToRole="PlayerTable" />
+  </EntityType>
+  <EntityType Name="MoneyRequest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="playerName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="Int32" />
+    <Property Name="pending" Type="Boolean" />
+    <Property Name="accepted" Type="Boolean" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__MoneyRequ__playe__38996AB5" FromRole="MoneyRequest" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="usrName" />
+    </Key>
+    <Property Name="usrName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="currentMoney" Type="Int32" />
+    <Property Name="cardBack" Type="Int32" />
+    <Property Name="gameBg" Type="Int32" />
+    <NavigationProperty Name="Decks" Relationship="Self.FK__Deck__playerName__44FF419A" FromRole="Player" ToRole="Deck" />
+    <NavigationProperty Name="MoneyRequests" Relationship="Self.FK__MoneyRequ__playe__38996AB5" FromRole="Player" ToRole="MoneyRequest" />
+    <NavigationProperty Name="PlayerTables" Relationship="Self.FK__PlayerTab__playe__3E52440B" FromRole="Player" ToRole="PlayerTable" />
+  </EntityType>
+  <EntityType Name="PlayerTable">
+    <Key>
+      <PropertyRef Name="tableId" />
+      <PropertyRef Name="playerName" />
+    </Key>
+    <Property Name="tableId" Type="Int32" Nullable="false" />
+    <Property Name="playerName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="totalBet" Type="Int32" />
+    <Property Name="isActivePlayer" Type="Boolean" />
+    <Property Name="isSmallBlind" Type="Boolean" />
+    <Property Name="isBigBlind" Type="Boolean" />
+    <Property Name="hasFolded" Type="Boolean" />
+    <NavigationProperty Name="GameTable" Relationship="Self.FK__PlayerTab__table__3D5E1FD2" FromRole="PlayerTable" ToRole="GameTable" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__PlayerTab__playe__3E52440B" FromRole="PlayerTable" ToRole="Player" />
+  </EntityType>
+  <Association Name="FK__Deck__440B1D61">
+    <End Role="GameCard" Type="Self.GameCard" Multiplicity="1" />
+    <End Role="Deck" Type="Self.Deck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameCard">
+        <PropertyRef Name="num" />
+        <PropertyRef Name="suit" />
+      </Principal>
+      <Dependent Role="Deck">
+        <PropertyRef Name="cardNum" />
+        <PropertyRef Name="cardSuit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Deck__playerName__44FF419A">
+    <End Role="Player" Type="Self.Player" Multiplicity="0..1" />
+    <End Role="Deck" Type="Self.Deck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="usrName" />
+      </Principal>
+      <Dependent Role="Deck">
+        <PropertyRef Name="playerName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Deck__tableId__4316F928">
+    <End Role="GameTable" Type="Self.GameTable" Multiplicity="1" />
+    <End Role="Deck" Type="Self.Deck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameTable">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Deck">
+        <PropertyRef Name="tableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlayerTab__table__3D5E1FD2">
+    <End Role="GameTable" Type="Self.GameTable" Multiplicity="1" />
+    <End Role="PlayerTable" Type="Self.PlayerTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameTable">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PlayerTable">
+        <PropertyRef Name="tableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MoneyRequ__playe__38996AB5">
+    <End Role="Player" Type="Self.Player" Multiplicity="0..1" />
+    <End Role="MoneyRequest" Type="Self.MoneyRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="usrName" />
+      </Principal>
+      <Dependent Role="MoneyRequest">
+        <PropertyRef Name="playerName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlayerTab__playe__3E52440B">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="PlayerTable" Type="Self.PlayerTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="usrName" />
+      </Principal>
+      <Dependent Role="PlayerTable">
+        <PropertyRef Name="playerName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="casinoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Decks" EntityType="Self.Deck" />
+    <EntitySet Name="GameCards" EntityType="Self.GameCard" />
+    <EntitySet Name="GameTables" EntityType="Self.GameTable" />
+    <EntitySet Name="MoneyRequests" EntityType="Self.MoneyRequest" />
+    <EntitySet Name="Players" EntityType="Self.Player" />
+    <EntitySet Name="PlayerTables" EntityType="Self.PlayerTable" />
+    <AssociationSet Name="FK__Deck__440B1D61" Association="Self.FK__Deck__440B1D61">
+      <End Role="GameCard" EntitySet="GameCards" />
+      <End Role="Deck" EntitySet="Decks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Deck__playerName__44FF419A" Association="Self.FK__Deck__playerName__44FF419A">
+      <End Role="Player" EntitySet="Players" />
+      <End Role="Deck" EntitySet="Decks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Deck__tableId__4316F928" Association="Self.FK__Deck__tableId__4316F928">
+      <End Role="GameTable" EntitySet="GameTables" />
+      <End Role="Deck" EntitySet="Decks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlayerTab__table__3D5E1FD2" Association="Self.FK__PlayerTab__table__3D5E1FD2">
+      <End Role="GameTable" EntitySet="GameTables" />
+      <End Role="PlayerTable" EntitySet="PlayerTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MoneyRequ__playe__38996AB5" Association="Self.FK__MoneyRequ__playe__38996AB5">
+      <End Role="Player" EntitySet="Players" />
+      <End Role="MoneyRequest" EntitySet="MoneyRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlayerTab__playe__3E52440B" Association="Self.FK__PlayerTab__playe__3E52440B">
+      <End Role="Player" EntitySet="Players" />
+      <End Role="PlayerTable" EntitySet="PlayerTables" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

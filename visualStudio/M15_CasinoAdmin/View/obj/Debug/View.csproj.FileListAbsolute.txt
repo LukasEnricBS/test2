@@ -1,0 +1,11 @@
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\bin\Debug\View.dll.config
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\bin\Debug\View.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\bin\Debug\View.pdb
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\obj\Debug\View.csprojAssemblyReference.cache
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\obj\Debug\View.AdminView.resources
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\obj\Debug\View.LoginView.resources
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\obj\Debug\View.Properties.Resources.resources
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\obj\Debug\View.csproj.GenerateResource.cache
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\obj\Debug\View.csproj.CoreCompileInputs.cache
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\obj\Debug\View.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\View\obj\Debug\View.pdb

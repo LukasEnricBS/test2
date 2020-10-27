@@ -1,0 +1,9 @@
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\bin\Debug\Model.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\bin\Debug\Model.pdb
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\obj\Debug\Model.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Model\obj\Debug\Model.pdb

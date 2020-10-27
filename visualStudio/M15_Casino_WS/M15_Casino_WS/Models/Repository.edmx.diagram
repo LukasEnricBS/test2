@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db99a03fcacb44368c9a727d59ac526d" Name="Diagram1">
+        <EntityTypeShape EntityType="casinoModel.Deck" Width="1.5" PointX="5.875" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="casinoModel.GameCard" Width="1.5" PointX="9.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="casinoModel.GameTable" Width="1.5" PointX="5.875" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="casinoModel.MoneyRequest" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="casinoModel.Player" Width="1.5" PointX="3.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="casinoModel.PlayerTable" Width="1.5" PointX="2.875" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="casinoModel.FK__Deck__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="casinoModel.FK__Deck__playerName__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="casinoModel.FK__Deck__tableId__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="casinoModel.FK__PlayerTab__table__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="casinoModel.FK__MoneyRequ__playe__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="casinoModel.FK__PlayerTab__playe__3E52440B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="casinoModelStoreContainer" CdmEntityContainer="casinoEntities">
+    <EntitySetMapping Name="Decks">
+      <EntityTypeMapping TypeName="casinoModel.Deck">
+        <MappingFragment StoreEntitySet="Deck">
+          <ScalarProperty Name="tableId" ColumnName="tableId" />
+          <ScalarProperty Name="cardNum" ColumnName="cardNum" />
+          <ScalarProperty Name="cardSuit" ColumnName="cardSuit" />
+          <ScalarProperty Name="playerName" ColumnName="playerName" />
+          <ScalarProperty Name="played" ColumnName="played" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameCards">
+      <EntityTypeMapping TypeName="casinoModel.GameCard">
+        <MappingFragment StoreEntitySet="GameCard">
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="suit" ColumnName="suit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameTables">
+      <EntityTypeMapping TypeName="casinoModel.GameTable">
+        <MappingFragment StoreEntitySet="GameTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="maxPlayers" ColumnName="maxPlayers" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoneyRequests">
+      <EntityTypeMapping TypeName="casinoModel.MoneyRequest">
+        <MappingFragment StoreEntitySet="MoneyRequest">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="playerName" ColumnName="playerName" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="pending" ColumnName="pending" />
+          <ScalarProperty Name="accepted" ColumnName="accepted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="casinoModel.Player">
+        <MappingFragment StoreEntitySet="Player">
+          <ScalarProperty Name="usrName" ColumnName="usrName" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="currentMoney" ColumnName="currentMoney" />
+          <ScalarProperty Name="cardBack" ColumnName="cardBack" />
+          <ScalarProperty Name="gameBg" ColumnName="gameBg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerTables">
+      <EntityTypeMapping TypeName="casinoModel.PlayerTable">
+        <MappingFragment StoreEntitySet="PlayerTable">
+          <ScalarProperty Name="tableId" ColumnName="tableId" />
+          <ScalarProperty Name="playerName" ColumnName="playerName" />
+          <ScalarProperty Name="totalBet" ColumnName="totalBet" />
+          <ScalarProperty Name="isActivePlayer" ColumnName="isActivePlayer" />
+          <ScalarProperty Name="isSmallBlind" ColumnName="isSmallBlind" />
+          <ScalarProperty Name="isBigBlind" ColumnName="isBigBlind" />
+          <ScalarProperty Name="hasFolded" ColumnName="hasFolded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

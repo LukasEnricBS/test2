@@ -1,0 +1,15 @@
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\Controller.exe
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\Controller.pdb
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\Microsoft.WebSockets.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\Model.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\View.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\Newtonsoft.Json.dll
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\Model.pdb
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\View.pdb
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\View.dll.config
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\bin\Debug\Newtonsoft.Json.xml
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\obj\Debug\Controller.csprojAssemblyReference.cache
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\obj\Debug\Controller.csproj.CopyComplete
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\obj\Debug\Controller.exe
+C:\Users\leo\Desktop\casino vFINAL\M15_CasinoAdmin\Controller\obj\Debug\Controller.pdb
